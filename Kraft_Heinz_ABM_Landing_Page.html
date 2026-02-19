@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recess × Kraft Heinz | Real Campaigns. Real Results.</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --navy: #0F1F33;
+    --blue: #1A3A5C;
+    --teal: #2E86AB;
+    --light-teal: #E8F4F8;
+    --sky: #5BC0EB;
+    --white: #FFFFFF;
+    --off-white: #F8FAFB;
+    --cream: #FAFAF7;
+    --light-gray: #F0F2F5;
+    --mid-gray: #6B7280;
+    --dark: #111827;
+    --green: #10B981;
+    --coral: #FF6B6B;
+  }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: var(--dark); line-height: 1.6; overflow-x: hidden; background: var(--white); }
+  img { max-width: 100%; display: block; }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--navy);
+    color: white;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(46,134,171,0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(91,192,235,0.15) 0%, transparent 50%),
+      var(--navy);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-text .eyebrow {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--sky);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .hero-text h1 {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .hero-text h1 .highlight {
+    background: linear-gradient(90deg, var(--sky), var(--teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-text p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+  .hero-stats-row {
+    display: flex;
+    gap: 32px;
+  }
+  .hero-stat-item {
+    padding: 16px 0;
+    border-top: 2px solid rgba(91,192,235,0.3);
+  }
+  .hero-stat-item .val {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--sky);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-stat-item .lbl {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .hero-img-card {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--blue);
+    position: relative;
+  }
+  .hero-img-card:first-child { grid-row: span 2; aspect-ratio: auto; }
+  .hero-img-card .placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    font-weight: 600;
+    text-align: center;
+    padding: 16px;
+    background:
+      linear-gradient(135deg, rgba(46,134,171,0.2) 0%, rgba(15,31,51,0.4) 100%);
+  }
+  .hero-img-card .brand-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+  }
+
+  /* ─── SECTION BASE ─── */
+  .section { padding: 100px 48px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .section-heading {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: var(--mid-gray);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  /* ─── CAMPAIGN SHOWCASE (the main event) ─── */
+  .campaigns { background: var(--off-white); }
+  .campaign-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .campaign-card:nth-child(even) .campaign-visual { order: 2; }
+  .campaign-card:nth-child(even) .campaign-details { order: 1; }
+
+  .campaign-visual {
+    position: relative;
+    min-height: 400px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .campaign-visual .placeholder-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 14px;
+    font-weight: 500;
+    background: linear-gradient(135deg, rgba(46,134,171,0.15) 0%, var(--navy) 100%);
+  }
+  .campaign-visual .placeholder-img .icon { font-size: 48px; margin-bottom: 12px; opacity: 0.4; }
+  .campaign-visual .placeholder-img .note {
+    font-size: 11px;
+    margin-top: 8px;
+    color: rgba(255,255,255,0.2);
+    max-width: 200px;
+  }
+
+  .campaign-details {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .campaign-brand-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .campaign-details h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .campaign-details .campaign-desc {
+    font-size: 15px;
+    color: var(--mid-gray);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .campaign-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .campaign-metric {
+    background: var(--off-white);
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
+  .campaign-metric .metric-val {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--navy);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .campaign-metric .metric-val.green { color: var(--green); }
+  .campaign-metric .metric-lbl {
+    font-size: 12px;
+    color: var(--mid-gray);
+    line-height: 1.3;
+  }
+
+  /* ─── AGGREGATE PROOF BAR ─── */
+  .proof-bar {
+    background: var(--navy);
+    color: white;
+    padding: 60px 48px;
+  }
+  .proof-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .proof-item .proof-val {
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--sky);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .proof-item .proof-lbl {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.4;
+  }
+
+  /* ─── VENUE STRIP ─── */
+  .venues { background: var(--white); }
+  .venue-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .venue-pill {
+    background: var(--off-white);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    border: 1px solid #E5E7EB;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .venue-pill:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .venue-pill .v-icon { font-size: 36px; margin-bottom: 12px; }
+  .venue-pill h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .venue-pill p { font-size: 13px; color: var(--mid-gray); line-height: 1.5; }
+
+  /* ─── NEXT BRANDS (light, not detailed) ─── */
+  .next-brands { background: var(--off-white); }
+  .next-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .next-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid #E5E7EB;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .next-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .next-card h4 { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+  .next-card .next-moment {
+    font-size: 13px;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .next-card p { font-size: 13px; color: var(--mid-gray); line-height: 1.5; }
+
+  /* ─── CTA ─── */
+  .cta {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 100px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(46,134,171,0.2) 0%, transparent 70%);
+  }
+  .cta-inner { position: relative; z-index: 1; }
+  .cta h2 { font-size: 44px; font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
+  .cta h2 span { color: var(--sky); }
+  .cta p { font-size: 18px; color: rgba(255,255,255,0.7); max-width: 540px; margin: 0 auto 40px; line-height: 1.7; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--sky);
+    color: var(--navy);
+    padding: 18px 48px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(91,192,235,0.3); }
+  .cta-contact { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.5); }
+
+  .footer {
+    background: #0A1628;
+    color: rgba(255,255,255,0.4);
+    padding: 24px 48px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; padding: 80px 24px 60px; }
+    .hero-visual { display: none; }
+    .hero-text h1 { font-size: 36px; }
+    .campaign-card { grid-template-columns: 1fr; }
+    .campaign-card:nth-child(even) .campaign-visual { order: 0; }
+    .campaign-card:nth-child(even) .campaign-details { order: 0; }
+    .proof-bar-inner { grid-template-columns: repeat(3, 1fr); }
+    .venue-strip, .next-grid { grid-template-columns: 1fr 1fr; }
+    .section { padding: 60px 24px; }
+    .section-heading { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="eyebrow">Prepared for Kraft Heinz</div>
+      <h1>We already sample <span class="highlight">your brands.</span><br>Let's do more together.</h1>
+      <p>Recess has driven 600K+ samples and 200%+ purchase intent lifts for Kraft Heinz brands like MIO, Lunchables, Velveeta, and Kraft Mac & Cheese. Here's the proof — and the opportunity to scale across your full portfolio.</p>
+      <div class="hero-stats-row">
+        <div class="hero-stat-item">
+          <span class="val">600K+</span>
+          <span class="lbl">Samples Delivered</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="val">+200%</span>
+          <span class="lbl">Avg Purchase Intent Lift</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="val">5</span>
+          <span class="lbl">Brands Activated</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-card">
+        <div class="placeholder">
+          <div class="icon">📸</div>
+          Velveeta Festival Activation<br><span class="note">Replace with Velveeta festival photo</span>
+        </div>
+        <div class="brand-badge">Velveeta</div>
+      </div>
+      <div class="hero-img-card">
+        <div class="placeholder">
+          <div class="icon">📸</div>
+          MIO Campus<br><span class="note">Replace with MIO sampling photo</span>
+        </div>
+        <div class="brand-badge">MIO</div>
+      </div>
+      <div class="hero-img-card">
+        <div class="placeholder">
+          <div class="icon">📸</div>
+          Lunchables Rec Center<br><span class="note">Replace with Lunchables photo</span>
+        </div>
+        <div class="brand-badge">Lunchables</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ AGGREGATE PROOF BAR ═══════ -->
+<section class="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="proof-item">
+      <span class="proof-val">600K+</span>
+      <span class="proof-lbl">Total Samples<br>Distributed</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-val">+195%</span>
+      <span class="proof-lbl">Avg Purchase Intent<br>Lift (Non-Purchasers)</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-val">55%</span>
+      <span class="proof-lbl">Purchase Quantity<br>Increase vs Unexposed</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-val">250+</span>
+      <span class="proof-lbl">Venue Locations<br>Activated</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-val">5</span>
+      <span class="proof-lbl">KH Brands<br>Activated</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CAMPAIGNS ═══════ -->
+<section class="section campaigns">
+  <div class="section-inner">
+    <div class="section-eyebrow">Campaign Results</div>
+    <div class="section-heading">Here's what we've done for your brands</div>
+    <div class="section-sub">Real campaigns. Real results. Every metric below comes from Kraft Heinz activations run through Recess.</div>
+
+    <!-- MIO -->
+    <div class="campaign-card">
+      <div class="campaign-visual">
+        <div class="placeholder-img">
+          <div class="icon">📸</div>
+          MIO Campaign Photo<br>
+          <span class="note">Replace with MIO campus sampling image</span>
+        </div>
+      </div>
+      <div class="campaign-details">
+        <div class="campaign-brand-tag">MIO — Beverage Enhancer</div>
+        <h3>University Campus + Fitness Studio Sampling</h3>
+        <p class="campaign-desc">Targeted university students through off-campus housing complexes and fitness studios — placing MIO directly in the hands of active, health-conscious consumers at the moments they reach for a drink.</p>
+        <div class="campaign-metrics">
+          <div class="campaign-metric">
+            <span class="metric-val">600K</span>
+            <span class="metric-lbl">Samples Distributed</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val green">+188%</span>
+            <span class="metric-lbl">Purchase Intent Lift (Non-Purchasers)</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val">🎓</span>
+            <span class="metric-lbl">University Students via Off-Campus Housing</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val">💪</span>
+            <span class="metric-lbl">Fitness Studios & Gyms</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KRAFT MAC & CHEESE -->
+    <div class="campaign-card">
+      <div class="campaign-visual">
+        <div class="placeholder-img">
+          <div class="icon">📸</div>
+          Kraft Mac & Cheese Campaign Photo<br>
+          <span class="note">Replace with KMC Big Cups sampling image</span>
+        </div>
+      </div>
+      <div class="campaign-details">
+        <div class="campaign-brand-tag">Kraft Mac & Cheese — Big Cups</div>
+        <h3>New Product Launch: Big Cups 2-Pack University Sampling</h3>
+        <p class="campaign-desc">Launched the new Big Cups 2-pack size directly to university students — driving first-time trial and converting non-purchasers into buyers with a significant lift in both purchase intent and quantity.</p>
+        <div class="campaign-metrics">
+          <div class="campaign-metric">
+            <span class="metric-val green">+170%</span>
+            <span class="metric-lbl">Purchase Intent Lift (Non-Purchasers)</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val green">+55%</span>
+            <span class="metric-lbl">Purchase Quantity Increase vs Unexposed</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val">🎓</span>
+            <span class="metric-lbl">University Student Audience</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val">🆕</span>
+            <span class="metric-lbl">New Product Size Launch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VELVEETA -->
+    <div class="campaign-card">
+      <div class="campaign-visual">
+        <div class="placeholder-img">
+          <div class="icon">📸</div>
+          Velveeta Campaign Photo<br>
+          <span class="note">Replace with Velveeta festival activation image</span>
+        </div>
+      </div>
+      <div class="campaign-details">
+        <div class="campaign-brand-tag">Velveeta — Cheese Products</div>
+        <h3>University Experiential Sampling</h3>
+        <p class="campaign-desc">Engaged university students with Velveeta's Big Cups 2-pack through experiential sampling — generating the highest purchase intent lift of any Kraft Heinz campaign on the platform and strong recommendation intent.</p>
+        <div class="campaign-metrics">
+          <div class="campaign-metric">
+            <span class="metric-val green">+222%</span>
+            <span class="metric-lbl">Purchase Intent Lift (Non-Purchasers)</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val green">+37%</span>
+            <span class="metric-lbl">Recommendation Intent Lift</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val">🎓</span>
+            <span class="metric-lbl">University Student Audience</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val">🏆</span>
+            <span class="metric-lbl">Highest Intent Lift of All KH Campaigns</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LUNCHABLES -->
+    <div class="campaign-card">
+      <div class="campaign-visual">
+        <div class="placeholder-img">
+          <div class="icon">📸</div>
+          Lunchables Grilled Cheesies Photo<br>
+          <span class="note">Replace with Lunchables rec center image</span>
+        </div>
+      </div>
+      <div class="campaign-details">
+        <div class="campaign-brand-tag">Lunchables — Grilled Cheesies</div>
+        <h3>Product Migration: Recreational Center Sampling in Chicago</h3>
+        <p class="campaign-desc">Distributed Grilled Cheesies 2-pack boxes across 250 recreational centers in Chicago, reaching parents at child pick-up — the exact moment they're thinking about easy meal solutions.</p>
+        <div class="campaign-metrics">
+          <div class="campaign-metric">
+            <span class="metric-val">97,458</span>
+            <span class="metric-lbl">2-Pack Boxes Distributed</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val">250</span>
+            <span class="metric-lbl">Recreational Centers</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val">📍</span>
+            <span class="metric-lbl">Chicago Market Activation</span>
+          </div>
+          <div class="campaign-metric">
+            <span class="metric-val">👨‍👩‍👧</span>
+            <span class="metric-lbl">Parents at Child Pick-Up</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════ VENUES ═══════ -->
+<section class="section venues">
+  <div class="section-inner">
+    <div class="section-eyebrow">Our Venue Network</div>
+    <div class="section-heading">We go where your consumers are</div>
+    <div class="section-sub">50,000+ venues across the U.S., curated for the moments that matter most to Kraft Heinz brands.</div>
+    <div class="venue-strip">
+      <div class="venue-pill">
+        <div class="v-icon">🎓</div>
+        <h4>University Housing</h4>
+        <p>Off-campus apartments, dorms, campus events — proven with MIO, Velveeta, and KMC</p>
+      </div>
+      <div class="venue-pill">
+        <div class="v-icon">🏃</div>
+        <h4>Fitness & Recreation</h4>
+        <p>Gyms, rec centers, youth sports — proven with MIO and Lunchables</p>
+      </div>
+      <div class="venue-pill">
+        <div class="v-icon">🏕️</div>
+        <h4>Travel & Outdoors</h4>
+        <p>Campgrounds, travel centers, beaches, amusement parks — summer moments</p>
+      </div>
+      <div class="venue-pill">
+        <div class="v-icon">🛒</div>
+        <h4>Retail & In-Store</h4>
+        <p>Sam's Club, Dollar General, grocery — proven with Lunchables DG activation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WHAT'S NEXT ═══════ -->
+<section class="section next-brands">
+  <div class="section-inner">
+    <div class="section-eyebrow">What's Next</div>
+    <div class="section-heading">Let us do this for your other brands</div>
+    <div class="section-sub">We've proven the model. These brands are a natural fit for the same playbook — tailored to their key retail moments.</div>
+    <div class="next-grid">
+      <div class="next-card">
+        <h4>Oscar Mayer</h4>
+        <div class="next-moment">Summer BBQ · Tailgate · Back-to-School</div>
+        <p>Grilling sampling at campgrounds, tailgate activations, lunchbox program at schools</p>
+      </div>
+      <div class="next-card">
+        <h4>Heinz Sauces</h4>
+        <div class="next-moment">Summer BBQ · Tailgate · Holiday</div>
+        <p>Grill station sampling, game day condiment bars, holiday sauce pairings</p>
+      </div>
+      <div class="next-card">
+        <h4>Capri Sun</h4>
+        <div class="next-moment">Youth Sports · Summer · Back-to-School</div>
+        <p>Sideline hydration at youth leagues, road trip sampling, lunchbox pairing</p>
+      </div>
+      <div class="next-card">
+        <h4>Philadelphia</h4>
+        <div class="next-moment">Holiday Entertaining · Sam's Club</div>
+        <p>Holiday dip & cheesecake sampling at retail events and holiday markets</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Your brands. <span>Our venues.</span><br>Real results.</h2>
+    <p>We've already driven 200%+ purchase intent lifts for Kraft Heinz. Let's bring that same impact to your next brand launch, seasonal campaign, or always-on sampling program.</p>
+    <a href="mailto:andy@recess.is?subject=Kraft%20Heinz%20Portfolio%20Expansion&body=Hi%20Andy%2C%0A%0AI%E2%80%99d%20love%20to%20discuss%20expanding%20our%20Recess%20partnership%20across%20additional%20Kraft%20Heinz%20brands.%0A%0A" class="cta-btn">Let's Talk</a>
+    <div class="cta-contact">Andy Cooper, Account Director — andy@recess.is</div>
+  </div>
+</section>
+
+<div class="footer">
+  &copy; 2026 Recess. Confidential — prepared exclusively for The Kraft Heinz Company.
+</div>
+
+</body>
+</html>
